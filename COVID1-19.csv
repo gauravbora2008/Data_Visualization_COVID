@@ -1,0 +1,185 @@
+Country Name,name,day,Cumulative Deaths,Confirmed_Cases,id,population
+Aruba,Aruba,4/9/2020,0,71,192,104589
+Guernsey,Guernsey,4/9/2020,4,166,204,65632
+Finland,Finland,4/9/2020,34,2308,FIN,5255068
+Australia,Australia,4/9/2020,45,5956,AUS,21515754
+Greece,Greece,4/9/2020,81,1832,GRC,10749943
+Greenland,Greenland,4/9/2020,0,11,GRL,57637
+Portugal,Portugal,4/9/2020,345,12442,PRT,10735765
+Israel,Israel,4/9/2020,71,9404,ISR,7353985
+Saint Lucia,Saint Lucia,4/9/2020,0,14,187,160922
+Ukraine,Ukraine,4/9/2020,52,1668,UKR,45415596
+Faroe Islands,Faroe Islands,4/9/2020,0,184,208,49057
+Nigeria,Nigeria,4/9/2020,6,254,NGA,152217341
+Angola,Angola,4/9/2020,2,17,AGO,13068161
+Eritrea,Eritrea,4/9/2020,0,31,ERI,5792984
+Zambia,Zambia,4/9/2020,1,39,ZMB,12056923
+Seychelles,Seychelles,4/9/2020,0,11,196,88340
+Bermuda,Bermuda,4/9/2020,2,39,201,68268
+Liechtenstein,Liechtenstein,4/9/2020,1,78,210,35002
+Uzbekistan,Uzbekistan,4/9/2020,3,534,UZB,27865738
+Guatemala,Guatemala,4/9/2020,3,77,GTM,13550440
+Iraq,Iraq,4/9/2020,65,1122,IRQ,29671605
+Poland,Poland,4/9/2020,129,4848,POL,38463689
+Costa Rica,Costa Rica,4/9/2020,2,467,CRI,4516220
+Austria,Austria,4/9/2020,243,12640,AUT,8214160
+Fiji,Fiji,4/9/2020,0,15,FJI,957780
+Mauritius,Mauritius,4/9/2020,7,268,153,1294104
+Kazakhstan,Kazakhstan,4/9/2020,6,709,KAZ,15460484
+Nicaragua,Nicaragua,4/9/2020,1,6,NIC,5995928
+Kuwait,Kuwait,4/9/2020,1,855,KWT,2789132
+Anguilla,Anguilla,4/9/2020,0,3,221,14764
+Niger,Niger,4/9/2020,11,278,NER,15878271
+Albania,Albania,4/9/2020,22,400,ALB,3659616
+Gibraltar,Gibraltar,4/9/2020,1,113,214,28877
+Mali,Mali,4/9/2020,5,47,MLI,13796354
+Central African Republic,Central African Republic,4/9/2020,0,9,CAF,4844927
+South Sudan,South Sudan,4/9/2020,0,1,SDS,12152321
+Antigua and Barbuda,Antigua and Barbuda,4/9/2020,0,15,197,86754
+British Virgin Islands,British Virgin Islands,4/9/2020,0,3,215,24939
+Saint Kitts and Nevis,Saint Kitts and Nevis,4/9/2020,0,10,207,49898
+Malta,Malta,4/9/2020,0,293,173,406771
+Dominican Republic,Dominican Republic,4/9/2020,98,1956,DOM,9794487
+Morocco,Morocco,4/9/2020,91,1242,MAR,31627428
+Lebanon,Lebanon,4/9/2020,19,575,LBN,4125247
+Japan,Japan,4/9/2020,81,4257,JPN,126804433
+Luxembourg,Luxembourg,4/9/2020,44,2970,LUX,497538
+Rwanda,Rwanda,4/9/2020,0,105,RWA,11055976
+Switzerland,Switzerland,4/9/2020,641,22164,CHE,7623438
+Thailand,Thailand,4/9/2020,30,2369,THA,66404688
+Colombia,Colombia,4/9/2020,46,1579,COL,44205293
+Puerto Rico,Puerto Rico,4/9/2020,23,573,PRI,3977663
+Bosnia and Herzegovina,Bosnia and Herzegovina,4/9/2020,32,781,BIH,4621598
+India,India,4/9/2020,149,5274,IND,1173108018
+Jordan,Jordan,4/9/2020,6,353,JOR,6407085
+Montserrat,Montserrat,4/9/2020,0,6,228,5118
+Tunisia,Tunisia,4/9/2020,23,623,TUN,10589025
+El Salvador,El Salvador,4/9/2020,4,78,SLV,6052064
+United Republic of Tanzania,United Republic of Tanzania,4/9/2020,1,24,TZA,41892895
+Guinea,Guinea,4/9/2020,0,144,GIN,10324025
+Sweden,Sweden,4/9/2020,591,7693,SWE,9074055
+United States Virgin Islands,United States Virgin Islands,4/9/2020,1,43,189,109775
+Mayotte,Mayotte,4/9/2020,2,184,181,231139
+United Arab Emirates,United Arab Emirates,4/9/2020,12,2659,ARE,4975593
+Indonesia,Indonesia,4/9/2020,240,2956,IDN,242968342
+Belarus,Belarus,4/9/2020,13,861,BLR,9612632
+Saint Vincent and the Grenadines,Saint Vincent and the Grenadines,4/9/2020,0,7,193,104217
+Turks and Caicos Islands,Turks and Caicos Islands,4/9/2020,1,8,216,23528
+Bahrain,Bahrain,4/9/2020,5,821,163,738004
+Saint Pierre and Miquelon,Saint Pierre and Miquelon,4/9/2020,0,1,227,6010
+Ghana,Ghana,4/9/2020,5,287,GHA,24339838
+Gambia,Gambia,4/9/2020,1,4,GMB,1824158
+Serbia,Serbia,4/9/2020,61,2447,SRB,7344847
+New Zealand,New Zealand,4/9/2020,1,969,NZL,4252277
+Brazil,Brazil,4/9/2020,553,12056,BRA,201103330
+The United Kingdom,The United Kingdom,4/9/2020,6159,55246,GBR,61284806
+Jamaica,Jamaica,4/9/2020,3,59,JAM,2847232
+Gabon,Gabon,4/9/2020,1,24,GAB,1545255
+Netherlands,Netherlands,4/9/2020,2101,19580,NLD,16783092
+Russian Federation,Russian Federation,4/9/2020,58,7497,RUS,139390205
+Suriname,Suriname,4/9/2020,1,10,SUR,486618
+Ethiopia,Ethiopia,4/9/2020,2,52,ETH,88013491
+Croatia,Croatia,4/9/2020,18,1282,HRV,4486881
+Canada,Canada,4/9/2020,345,17049,CAN,33759742
+Nepal,Nepal,4/9/2020,0,9,NPL,28951852
+Haiti,Haiti,4/9/2020,1,25,HTI,9203083
+Libya,Libya,4/9/2020,1,21,LBY,6461454
+Paraguay,Paraguay,4/9/2020,5,115,PRY,6375830
+Saint Martin,Saint Martin,4/9/2020,2,31,213,30235
+France,France,4/9/2020,10313,77226,FRA,64057792
+Cameroon,Cameroon,4/9/2020,9,555,CMR,19294149
+Congo,Congo,4/9/2020,5,49,COD,70916439
+Mozambique,Mozambique,4/9/2020,0,10,MOZ,22061451
+Madagascar,Madagascar,4/9/2020,0,92,MDG,21281844
+Montenegro,Montenegro,4/9/2020,2,248,MNE,666730
+Iceland,Iceland,4/9/2020,6,1586,ISL,308910
+Azerbaijan,Azerbaijan,4/9/2020,8,717,AZE,8303512
+Monaco,Monaco,4/9/2020,0,40,212,30586
+Dominica,Dominica,4/9/2020,0,15,DOM,72813
+Grenada,Grenada,4/9/2020,0,12,190,107818
+Argentina,Argentina,4/9/2020,53,1628,ARG,41343201
+Turkey,Turkey,4/9/2020,725,34109,TUR,77804122
+Bahamas,Bahamas,4/9/2020,5,33,BHS,310426
+Sierra Leone,Sierra Leone,4/9/2020,0,6,SLE,5245695
+Mongolia,Mongolia,4/9/2020,0,16,MNG,3086918
+Senegal,Senegal,4/9/2020,2,237,SEN,14086103
+Malawi,Malawi,4/9/2020,1,8,MWI,15447500
+Bangladesh,Bangladesh,4/9/2020,20,218,BGD,158065841
+Oman,Oman,4/9/2020,2,419,OMN,2967717
+Oman,oman,4/9/2020,2,419,LKA,21513990
+Venezuela ,Venezuela,4/9/2020,7,165,VEN,27223228
+Botswana,Botswana,4/9/2020,1,6,BWA,2029307
+Uruguay,Uruguay,4/9/2020,6,415,URY,3510386
+Burkina Faso,Burkina Faso,4/9/2020,18,384,BFA,16241811
+Cambodia,Cambodia,4/9/2020,0,117,KHM,14753320
+Andorra,Andorra,4/9/2020,22,551,198,84525
+Viet Nam,Vietnam,4/9/2020,0,251,VNM,89571130
+Singapore,Singapore,4/9/2020,6,1481,SGP,4701069
+Zimbabwe,Zimbabwe,4/9/2020,2,11,ZWE,11651858
+Chad,Chad,4/9/2020,0,10,TCD,10543464
+Egypt,Egypt,4/9/2020,94,1450,EGY,80471869
+Slovakia,Slovakia,4/9/2020,2,598,SVK,5470306
+Armenia,Armenia,4/9/2020,8,877,ARM,2966802
+Germany,Germany,4/9/2020,1861,103228,DEU,82282988
+New Caledonia,New Caledonia,4/9/2020,0,18,NCL,229993
+Barbados,Barbados,4/9/2020,2,60,180,285653
+Togo,Togo,4/9/2020,3,58,TGO,6199841
+Cuba,Cuba,4/9/2020,11,396,CUB,11477459
+Guyana,Guyana,4/9/2020,5,31,GUY,748486
+Uganda,Uganda,4/9/2020,0,52,UGA,33398682
+Trinidad and Tobago,Trinidad and Tobago,4/9/2020,8,106,TTO,1228691
+Belize,Belize,4/9/2020,1,7,BLZ,314522
+Panama,Panama,4/9/2020,55,2100,PAN,3410676
+Equatorial Guinea,Equatorial Guinea,4/9/2020,0,16,GNQ,650702
+Liberia,Liberia,4/9/2020,3,14,LBR,3685076
+Mauritania,Mauritania,4/9/2020,1,6,MRT,3205060
+Guinea-Bissau,Guinea-Bissau,4/9/2020,0,33,GNB,1565126
+Sao Tome and Principe,Sao Tome and Principe,4/9/2020,0,4,186,175808
+Timor-Leste,Timor-Leste,4/9/2020,0,1,TLS,1154625
+Malaysia,Malaysia,4/9/2020,63,3963,MYS,26160256
+Algeria,Algeria,4/9/2020,194,1468,DZA,34586184
+South Africa,South Africa,4/9/2020,13,1749,ZAF,49109107
+Cayman Islands,Cayman Islands,4/9/2020,1,39,206,50209
+Ireland,Ireland,4/9/2020,210,5709,IRL,4250163
+Italy,Italy,4/9/2020,17129,135586,ITA,58090681
+Romania,Romania,4/9/2020,182,4417,ROU,22181287
+Kyrgyzstan,Kyrgyzstan,4/9/2020,4,270,KGZ,5508626
+Denmark,Denmark,4/9/2020,203,5071,DNK,5515575
+Norway,Norway,4/9/2020,69,5863,NOR,4676305
+Burundi,Burundi,4/9/2020,0,3,BDI,9863117
+Georgia,Georgia,4/9/2020,3,208,GEO,4600825
+Slovenia,Slovenia,4/9/2020,36,1055,SVN,2003136
+Estonia,Estonia,4/9/2020,21,1149,EST,1291170
+Philippines,Philippines,4/9/2020,182,3870,PHL,99900177
+Maldives,Maldives,4/9/2020,0,19,174,395650
+Peru,Peru,4/9/2020,92,2561,PER,29907003
+United States of America,United States of America,4/9/2020,10845,363321,USA,310232863
+China,China,4/9/2020,3342,83161,CHN,1330141295
+Kenya,Kenya,4/9/2020,6,172,KEN,40046566
+Bhutan,Bhutan,4/9/2020,0,5,BTN,699847
+Cyprus,Cyprus,4/9/2020,14,494,CYP,1102677
+Afghanistan,Afghanistan,4/9/2020,14,423,AFG,29121286
+Papua New Guinea,Papua New Guinea,4/9/2020,0,1,PNG,6064515
+Benin,Benin,4/9/2020,1,26,BEN,9056010
+Pakistan,Pakistan,4/9/2020,58,4183,PAK,177276594
+Bulgaria,Bulgaria,4/9/2020,23,577,BGR,7148785
+Djibouti,Djibouti,4/9/2020,0,135,DJI,740528
+Qatar,Qatar,4/9/2020,6,2210,QAT,840926
+French Polynesia,French Polynesia,4/9/2020,0,47,179,291000
+Latvia,Latvia,4/9/2020,2,548,LVA,2217969
+Lithuania,Lithuania,4/9/2020,15,880,LTU,3545319
+Chile,Chile,4/9/2020,43,5116,CHL,16746491
+Hungary,Hungary,4/9/2020,58,895,HUN,9880059
+Honduras,Honduras,4/9/2020,22,305,HND,7989415
+Namibia,Namibia,4/9/2020,0,16,NAM,2128471
+Spain,Spain,4/9/2020,13798,140510,ESP,40548753
+Isle of Man,Isle of Man,4/9/2020,1,150,199,76913
+Mexico,Mexico,4/9/2020,125,2439,MEX,112468855
+Belgium,Belgium,4/9/2020,2035,22194,BEL,10423493
+Ecuador,Ecuador,4/9/2020,191,3747,ECU,14790608
+San Marino,San Marino,4/9/2020,34,279,211,31477
+Saudi Arabia,Saudi Arabia,4/9/2020,41,2932,SAU,29207277
+Sudan,Sudan,4/9/2020,2,14,SDN,41980182
+Somalia,Somalia,4/9/2020,0,8,SOM,10112453
+Jersey,Jersey,4/9/2020,3,170,195,91812
+Iran,Iran,4/9/2020,3993,64586,IRN,67037517

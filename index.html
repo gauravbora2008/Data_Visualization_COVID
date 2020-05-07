@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Coronavirus</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="HTML5 website template">
+  <meta name="keywords" content="global, template, html, sass, jquery">
+  <meta name="author" content="Sheryl Bernard">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<style>
+
+  .names {
+    fill: none;
+    stroke: #fff;
+    stroke-linejoin: round;
+  }
+
+  /* Tooltip CSS */
+  .d3-tip {
+    line-height: 1.5;
+    font-weight: 400;
+    font-family:"avenir next", Arial, sans-serif;
+    padding: 6px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #FFA500;
+    border-radius: 1px;
+    pointer-events: none;
+  }
+
+  /* Creates a small triangle extender for the tooltip */
+  .d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 8px;
+    width: 100%;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    pointer-events: none;
+
+  }
+
+  /* Northward tooltips */
+  .d3-tip.n:after {
+    content: "\25BC";
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+    text-align: center;
+  }
+
+  /* Eastward tooltips */
+  .d3-tip.e:after {
+    content: "\25C0";
+    margin: -4px 0 0 0;
+    top: 50%;
+    left: -8px;
+  }
+
+  /* Southward tooltips */
+  .d3-tip.s:after {
+    content: "\25B2";
+    margin: 0 0 1px 0;
+    top: -8px;
+    left: 0;
+    text-align: center;
+  }
+
+  /* Westward tooltips */
+  .d3-tip.w:after {
+    content: "\25B6";
+    margin: -4px 0 0 -1px;
+    top: 50%;
+    left: 100%;
+  }
+
+  /*    text{
+        pointer-events:none;
+      }*/
+
+  .details{
+    color:white;
+  }
+
+</style>
+<body>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="https://d3js.org/queue.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+<script src="d3-tip.js"></script>
+
+
+<!-- notification for small viewports and landscape oriented smartphones -->
+<div class="device-notification">
+  <a class="device-notification--logo" href="#0">
+    <img src="assets/img/corona_logo.png" alt="Global">
+    <p>Coronavirus</p>
+  </a>
+  <p class="device-notification--message">Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.</p>
+</div>
+
+<div class="perspective effect-rotate-left">
+  <div class="container"><div class="outer-nav--return"></div>
+    <div id="viewport" class="l-viewport">
+      <div class="l-wrapper">
+        <header class="header">
+          <a class="header--logo" href="#0">
+            <img src="assets/img/corona_logo.png" alt="Coronavirus_logo" height="50">
+            <p>Coronavirus</p>
+          </a>
+          <button class="header--cta cta">Know more</button>
+          <div class="header--nav-toggle">
+            <span></span>
+          </div>
+        </header>
+        <nav class="l-side-nav">
+          <ul class="side-nav">
+            <li class="is-active"><span>Home</span></li>
+            <li><span>About</span></li>
+            <li><span>Symptoms</span></li>
+            <li><span>World-wide effect</span></li>
+            <li><span>Daily update</span></li>
+            <li><span>Twitter analysis</span></li>
+            <li><span>Stay Safe</span></li>
+          </ul>
+        </nav>
+        <ul class="l-main-content main-content">
+          <li class="l-section section section--is-active">
+            <div class="intro">
+              <div class="intro--banner">
+                <h1>Coronaviruses<br>are a type<br>of virus</h1>
+                <button class="cta">Know more
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                  </g>
+                  </svg>
+                  <span class="btn-background"></span>
+                </button>
+                <img src="assets/img/corona_logo.png" alt="Welcome" height="450">
+              </div>
+              <div class="intro--options">
+                <a href="#0">
+                  <h3>What is COVID-19?</h3>
+                  <p>This is a new virus called the severe acute respiratory syndrome. In March 2020, the World Health Organization(WHO) declared COVID-19 a pandemic. </p>
+                </a>
+                <a href="#0">
+                  <h3>How does COVID-19 spread?</h3>
+                  <p>It spreads from person to person among those in close contact(within about 6 feet). It spreads via respiratory droplets infected with the virus.</p>
+                </a>
+                <a href="#0">
+                  <h3>Can COVID-19 be prevented or treated?</h3>
+                  <p>There is no vaccine currently available for the coronavirus disease. Treatment is directed at relieving symptoms.</p>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="work">
+              <h2>About</h2>
+              <div class="work--lockup">
+                <ul class="slider">
+                  <li class="slider--item slider--item-left">
+                    <a href="#0">
+                      <div class="slider--item-image">
+                        <img src="assets/img/fact3.jpg" alt="Contagious">
+                      </div>
+                      <p class="slider--item-title">Contagious</p>
+                      <p class="slider--item-description">COVID-19 is a contagious disease that causes mild to severe respiratory symptoms with fever, cough, and shortness of breath.</p>
+                    </a>
+                  </li>
+                  <li class="slider--item slider--item-center">
+                    <a href="#0">
+                      <div class="slider--item-image">
+                        <img src="assets/img/fact1.jpg" alt="Originated">
+                      </div>
+                      <p class="slider--item-title">Originated</p>
+                      <p class="slider--item-description">The then-mystery illness, Covid-19 was first reported in Wuhan last December, not long before the lead up to the Lunar New Year when China undertakes the world’s largest mass migration.</p>
+                    </a>
+                  </li>
+                  <li class="slider--item slider--item-right">
+                    <a href="#0">
+                      <div class="slider--item-image">
+                        <img src="assets/img/fact2.jpg" alt="Pandemic">
+                      </div>
+                      <p class="slider--item-title">Pandemic</p>
+                      <p class="slider--item-description">COVID-19 pandemic has claimed the lives of more than 258,000 people and sickened more than 3.6 million people globally, with numbers still rising. </p>
+                    </a>
+                  </li>
+                </ul>
+                <div class="slider--prev">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                  viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                    <path d="M561,1169C525,1155,10,640,3,612c-3-13,1-36,8-52c8-15,134-145,281-289C527,41,562,10,590,10c22,0,41,9,61,29
+                    c55,55,49,64-163,278L296,510h575c564,0,576,0,597,20c46,43,37,109-18,137c-19,10-159,13-590,13l-565,1l182,180
+                    c101,99,187,188,193,199c16,30,12,57-12,84C631,1174,595,1183,561,1169z"/>
+                  </g>
+                  </svg>
+                </div>
+                <div class="slider--next">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                  </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="about">
+              <div class="about--banner">
+                <h2>Most<br> Common<br> Symptoms</h2>
+
+                <p>COVID-19 affects different people in different ways. Infected people<br> have had a wide range of symptoms reported – from mild<br> symptoms to severe illness.
+                </p>
+                <img src="assets/img/symptoms.jpg" alt="About Us">
+              </div>
+              <div class="about--options">
+                <a href="#0">
+                  <h3>Fever</h3>
+                </a>
+                <a href="#0">
+                  <h3>Cough</h3>
+                </a>
+                <a href="#0">
+                  <h3>Shortness of breath</h3>
+                </a>
+              </div>
+            </div>
+          </li>
+          <!--slide4-->
+         <li class="l-section section">
+           <script>
+             var format = d3.format(",");
+
+             // Set tooltips
+             var tip = d3.tip()
+                     .attr('class', 'd3-tip')
+                     .offset([-10, 0])
+                     .html(function(d) {
+                       console.log(d);
+                       return "<strong>Country: </strong><span class='details'>" + d.properties.name + "<br></span>" + "<strong>Confirmed Cases: </strong><span class='details'>" + format(d.Confirmed_Cases
+                       ) +"</span>";
+                     })
+
+             var margin = {top: 0, right: 0, bottom: 0, left: 0},
+                     width = 960 - margin.left - margin.right,
+                     height = 700 - margin.top - margin.bottom;
+
+             var color = d3.scale.threshold()
+                     .domain([10,100,200,500,750,1000,2500,5000,7500,10000,20000,35000,50000,100000,200000,3000000,360000])
+                     .range(["rgb(217,231,245)","rgb(152,172,255)","rgb(217,231,245)","rgb(107,150,245)", "rgb(113,168,245)","rgb(222,235,247)", "rgb(198,219,239)", "rgb(158,202,225)", "rgb(107,174,214)", "rgb(66,146,198)","rgb(33,113,181)","rgb(8,81,156)","rgb(8,48,107)","rgb(3,19,43)",
+                       "rgb(102,14,21)"]);
+
+             var path = d3.geo.path();
+
+             var svg = d3.select("body")
+                     .append("svg")
+                     .attr("width", width)
+                     .attr("height", height)
+                     .append('g')
+                     .attr('class', 'map');
+
+             var projection = d3.geo.mercator()
+                     .scale(130)
+                     .translate( [width / 2, height / 1.5]);
+
+             var path = d3.geo.path().projection(projection);
+
+             svg.call(tip);
+
+             queue()
+                     .defer(d3.json, 'world_countries.txt')
+                     .defer(d3.csv, 'COVID1-19.csv')
+                     .await(ready);
+
+             function ready(error, data, Confirmed_Cases) {
+               var confCasesById = {};
+
+               Confirmed_Cases.forEach(function(d) { confCasesById[d.id] = +d.Confirmed_Cases; });
+               data.features.forEach(function(d) { d.Confirmed_Cases = confCasesById[d.id] });
+
+               svg.append("g")
+                       .attr("class", "countries")
+                       .selectAll("path")
+                       .data(data.features)
+                       .enter().append("path")
+                       .attr("d", path)
+                       .style("fill", function(d) { return color(confCasesById[d.id]); })
+                       .style('stroke', 'white')
+                       .style('stroke-width', 1.5)
+                       .style("opacity",0.8)
+                       // tooltips
+                       .style("stroke","white")
+                       .style('stroke-width', 0.3)
+                       .on('mouseover',function(d){
+                         tip.show(d);
+
+                         d3.select(this)
+                                 .style("opacity", 1)
+                                 .style("stroke","white")
+                                 .style("stroke-width",3);
+                       })
+                       .on('mouseout', function(d){
+                         tip.hide(d);
+
+                         d3.select(this)
+                                 .style("opacity", 0.8)
+                                 .style("stroke","white")
+                                 .style("stroke-width",0.3);
+                       });
+
+               svg.append("path")
+                       .datum(topojson.mesh(data.features, function(a, b) { return a.id !== b.id; }))
+                       // .datum(topojson.mesh(data.features, function(a, b) { return a !== b; }))
+                       .attr("class", "names")
+                       .attr("d", path);
+             }
+
+           </script>
+
+
+
+
+<!--           <div class="contact">-->
+<!--             <div class="contact&#45;&#45;lockup">-->
+<!--              <div class="modal">-->
+<!--                 <div class="modal&#45;&#45;information">-->
+
+<!--                   <p>Pawia 5, 31-154 Kraków, Poland</p>-->
+<!--                   <a href="mailto:ouremail@gmail.com">ouremail@gmail.com</a>-->
+<!--                   <a href="tel:+148126287560">+48 12 628 75 60</a>-->
+<!--                 </div>-->
+<!--                 <ul class="modal&#45;&#45;options">-->
+<!--                   <li><a href="#0">Bēhance</a></li>-->
+<!--                   <li><a href="#0">dribbble</a></li>-->
+<!--                   <li><a href="mailto:ouremail@gmail.com">Contact Us</a></li>-->
+<!--                 </ul>-->
+<!--               </div>-->
+<!--             </div>-->
+<!--           </div>-->
+          </li>
+
+
+
+          <!--slide5-->
+<!--          <li class="l-section section">-->
+<!--            <div class="hire">-->
+<!--              <h2>You want us to do</h2>-->
+
+<!--              <form class="work-request">-->
+<!--                <div class="work-request&#45;&#45;options">-->
+<!--                  <span class="options-a">-->
+<!--                    <input id="opt-1" type="checkbox" value="app design">-->
+<!--                    <label for="opt-1">-->
+<!--                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"-->
+<!--                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">-->
+<!--                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">-->
+<!--                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>-->
+<!--                      </g>-->
+<!--                      </svg>-->
+<!--                      App Design-->
+<!--                    </label>-->
+<!--                    <input id="opt-2" type="checkbox" value="graphic design">-->
+<!--                    <label for="opt-2">-->
+<!--                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"-->
+<!--                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">-->
+<!--                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">-->
+<!--                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>-->
+<!--                      </g>-->
+<!--                      </svg>-->
+<!--                      Graphic Design-->
+<!--                    </label>-->
+<!--                    <input id="opt-3" type="checkbox" value="motion design">-->
+<!--                    <label for="opt-3">-->
+<!--                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"-->
+<!--                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">-->
+<!--                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">-->
+<!--                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>-->
+<!--                      </g>-->
+<!--                      </svg>-->
+<!--                      Motion Design-->
+<!--                    </label>-->
+<!--                  </span>-->
+<!--                  <span class="options-b">-->
+<!--                    <input id="opt-4" type="checkbox" value="ux design">-->
+<!--                    <label for="opt-4">-->
+<!--                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"-->
+<!--                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">-->
+<!--                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">-->
+<!--                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>-->
+<!--                      </g>-->
+<!--                      </svg>-->
+<!--                      UX Design-->
+<!--                    </label>-->
+<!--                    <input id="opt-5" type="checkbox" value="webdesign">-->
+<!--                    <label for="opt-5">-->
+<!--                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"-->
+<!--                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">-->
+<!--                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">-->
+<!--                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>-->
+<!--                      </g>-->
+<!--                      </svg>-->
+<!--                      Webdesign-->
+<!--                    </label>-->
+<!--                    <input id="opt-6" type="checkbox" value="marketing">-->
+<!--                    <label for="opt-6">-->
+<!--                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"-->
+<!--                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">-->
+<!--                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">-->
+<!--                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>-->
+<!--                      </g>-->
+<!--                      </svg>-->
+<!--                      Marketing-->
+<!--                    </label>-->
+<!--                  </span>-->
+<!--                </div>-->
+<!--                <div class="work-request&#45;&#45;information">-->
+<!--                  <div class="information-name">-->
+<!--                    <input id="name" type="text" spellcheck="false">-->
+<!--                    <label for="name">Name</label>-->
+<!--                  </div>-->
+<!--                  <div class="information-email">-->
+<!--                    <input id="email" type="email" spellcheck="false">-->
+<!--                    <label for="email">Email</label>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <input type="submit" value="Send Request">-->
+<!--              </form>-->
+<!--            </div>-->
+<!--          </li>-->
+
+
+          <!--slide6-->
+          <li class="l-section section">
+            <div class="hire">
+              <div class='tableauPlaceholder' id='viz1588887241883' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Covid_tweets&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Covid_tweets&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Covid_tweets&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1588887241883');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='1177px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+            </div>
+          </li>
+
+
+        </ul>
+      </div>
+    </div>
+  </div>
+  <ul class="outer-nav">
+    <li class="is-active">Home</li>
+    <li>About</li>
+    <li>Symptoms</li>
+    <li>World-Wide effect</li>
+    <li>Daily update</li>
+    <li>Twitter analysis</li>
+    <li>How to stay safe</li>
+  </ul>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+<script src="assets/js/functions-min.js"></script>
+</body>
+</html>
