@@ -234,118 +234,8 @@
           </li>
           <!--slide4-->
          <li class="l-section section">
-           <script>
-             var format = d3.format(",");
-
-             // Set tooltips
-             var tip = d3.tip()
-                     .attr('class', 'd3-tip')
-                     .offset([-10, 0])
-                     .html(function(d) {
-                       console.log(d);
-                       return "<strong>Country: </strong><span class='details'>" + d.properties.name + "<br></span>" + "<strong>Confirmed Cases: </strong><span class='details'>" + format(d.Confirmed_Cases
-                       ) +"</span>";
-                     })
-
-             var margin = {top: 0, right: 0, bottom: 0, left: 0},
-                     width = 960 - margin.left - margin.right,
-                     height = 700 - margin.top - margin.bottom;
-
-             var color = d3.scale.threshold()
-                     .domain([10,100,200,500,750,1000,2500,5000,7500,10000,20000,35000,50000,100000,200000,3000000,360000])
-                     .range(["rgb(217,231,245)","rgb(152,172,255)","rgb(217,231,245)","rgb(107,150,245)", "rgb(113,168,245)","rgb(222,235,247)", "rgb(198,219,239)", "rgb(158,202,225)", "rgb(107,174,214)", "rgb(66,146,198)","rgb(33,113,181)","rgb(8,81,156)","rgb(8,48,107)","rgb(3,19,43)",
-                       "rgb(102,14,21)"]);
-
-             var path = d3.geo.path();
-
-             var svg = d3.select("body")
-                     .append("svg")
-                     .attr("width", width)
-                     .attr("height", height)
-                     .append('g')
-                     .attr('class', 'map');
-
-             var projection = d3.geo.mercator()
-                     .scale(130)
-                     .translate( [width / 2, height / 1.5]);
-
-             var path = d3.geo.path().projection(projection);
-
-             svg.call(tip);
-
-             queue()
-                     .defer(d3.json, 'world_countries.txt')
-                     .defer(d3.csv, 'COVID1-19.csv')
-                     .await(ready);
-
-             function ready(error, data, Confirmed_Cases) {
-               var confCasesById = {};
-
-               Confirmed_Cases.forEach(function(d) { confCasesById[d.id] = +d.Confirmed_Cases; });
-               data.features.forEach(function(d) { d.Confirmed_Cases = confCasesById[d.id] });
-
-               svg.append("g")
-                       .attr("class", "countries")
-                       .selectAll("path")
-                       .data(data.features)
-                       .enter().append("path")
-                       .attr("d", path)
-                       .style("fill", function(d) { return color(confCasesById[d.id]); })
-                       .style('stroke', 'white')
-                       .style('stroke-width', 1.5)
-                       .style("opacity",0.8)
-                       // tooltips
-                       .style("stroke","white")
-                       .style('stroke-width', 0.3)
-                       .on('mouseover',function(d){
-                         tip.show(d);
-
-                         d3.select(this)
-                                 .style("opacity", 1)
-                                 .style("stroke","white")
-                                 .style("stroke-width",3);
-                       })
-                       .on('mouseout', function(d){
-                         tip.hide(d);
-
-                         d3.select(this)
-                                 .style("opacity", 0.8)
-                                 .style("stroke","white")
-                                 .style("stroke-width",0.3);
-                       });
-
-               svg.append("path")
-                       .datum(topojson.mesh(data.features, function(a, b) { return a.id !== b.id; }))
-                       // .datum(topojson.mesh(data.features, function(a, b) { return a !== b; }))
-                       .attr("class", "names")
-                       .attr("d", path);
-             }
-
-           </script>
-
-
-
-
-<!--           <div class="contact">-->
-<!--             <div class="contact&#45;&#45;lockup">-->
-<!--              <div class="modal">-->
-<!--                 <div class="modal&#45;&#45;information">-->
-
-<!--                   <p>Pawia 5, 31-154 Kraków, Poland</p>-->
-<!--                   <a href="mailto:ouremail@gmail.com">ouremail@gmail.com</a>-->
-<!--                   <a href="tel:+148126287560">+48 12 628 75 60</a>-->
-<!--                 </div>-->
-<!--                 <ul class="modal&#45;&#45;options">-->
-<!--                   <li><a href="#0">Bēhance</a></li>-->
-<!--                   <li><a href="#0">dribbble</a></li>-->
-<!--                   <li><a href="mailto:ouremail@gmail.com">Contact Us</a></li>-->
-<!--                 </ul>-->
-<!--               </div>-->
-<!--             </div>-->
-<!--           </div>-->
+            <div id="world_map"></div>
           </li>
-
-
 
           <!--slide5-->
 <!--          <li class="l-section section">-->
@@ -457,6 +347,95 @@
     <li>How to stay safe</li>
   </ul>
 </div>
+
+<script>
+  var format = d3.format(",");
+
+  // Set tooltips
+  var tip = d3.tip()
+          .attr('class', 'd3-tip')
+          .offset([-10, 0])
+          .html(function(d) {
+            console.log(d);
+            return "<strong>Country: </strong><span class='details'>" + d.properties.name + "<br></span>" + "<strong>Confirmed Cases: </strong><span class='details'>" + format(d.Confirmed_Cases
+            ) +"</span>";
+          })
+
+  var margin = {top: 0, right: 0, bottom: 0, left: 0},
+          width = 960 - margin.left - margin.right,
+          height = 700 - margin.top - margin.bottom;
+
+  var color = d3.scale.threshold()
+          .domain([10,100,200,500,750,1000,2500,5000,7500,10000,20000,35000,50000,100000,200000,3000000,360000])
+          .range(["rgb(217,231,245)","rgb(152,172,255)","rgb(217,231,245)","rgb(107,150,245)", "rgb(113,168,245)","rgb(222,235,247)", "rgb(198,219,239)", "rgb(158,202,225)", "rgb(107,174,214)", "rgb(66,146,198)","rgb(33,113,181)","rgb(8,81,156)","rgb(8,48,107)","rgb(3,19,43)",
+            "rgb(102,14,21)"]);
+
+  var path = d3.geo.path();
+
+  var svg = d3.select("#world_map")
+          .append("svg")
+          .attr("width", width)
+          .attr("height", height)
+          .append('g')
+          .attr('class', 'map');
+
+  var projection = d3.geo.mercator()
+          .scale(130)
+          .translate( [width / 2, height / 1.5]);
+
+  var path = d3.geo.path().projection(projection);
+
+  svg.call(tip);
+
+  queue()
+          .defer(d3.json, 'world_countries.txt')
+          .defer(d3.csv, 'COVID1-19.csv')
+          .await(ready);
+
+  function ready(error, data, Confirmed_Cases) {
+    var confCasesById = {};
+
+    Confirmed_Cases.forEach(function(d) { confCasesById[d.id] = +d.Confirmed_Cases; });
+    data.features.forEach(function(d) { d.Confirmed_Cases = confCasesById[d.id] });
+
+    svg.append("g")
+            .attr("class", "countries")
+            .selectAll("path")
+            .data(data.features)
+            .enter().append("path")
+            .attr("d", path)
+            .style("fill", function(d) { return color(confCasesById[d.id]); })
+            .style('stroke', 'white')
+            .style('stroke-width', 1.5)
+            .style("opacity",0.8)
+            // tooltips
+            .style("stroke","white")
+            .style('stroke-width', 0.3)
+            .on('mouseover',function(d){
+              tip.show(d);
+
+              d3.select(this)
+                      .style("opacity", 1)
+                      .style("stroke","white")
+                      .style("stroke-width",3);
+            })
+            .on('mouseout', function(d){
+              tip.hide(d);
+
+              d3.select(this)
+                      .style("opacity", 0.8)
+                      .style("stroke","white")
+                      .style("stroke-width",0.3);
+            });
+
+    svg.append("path")
+            .datum(topojson.mesh(data.features, function(a, b) { return a.id !== b.id; }))
+            // .datum(topojson.mesh(data.features, function(a, b) { return a !== b; }))
+            .attr("class", "names")
+            .attr("d", path);
+  }
+
+</script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
